@@ -1,0 +1,22 @@
+---
+
+- hosts: all
+  become: true
+  vars:
+    bitbucket_hash_salt: testing
+    bitbucket_pass: welcome1
+    bitbucket_user: svc_bitbucket
+    bitbucket_jvm_maximum_memory: "512m"
+    bitbucket_jvm_minimum_memory: "128m"
+
+
+  pre_tasks:
+
+  - name: Install Git
+    yum: name=git
+
+
+  roles:
+    - ansible-role-bitbucket
+
+  tasks:
