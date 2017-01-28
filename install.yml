@@ -12,8 +12,11 @@
 
   pre_tasks:
 
+  - name: Install Java
+    package: name=java
+
   - name: Install Git
-    yum: name=git
+    package: name=git
 
 
   roles:
